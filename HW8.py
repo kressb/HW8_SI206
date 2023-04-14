@@ -53,6 +53,7 @@ def plot_rest_categories(db):
         categories[row[0]] = row[1]
     conn.close()
 
+    #sql
     x = categories.keys()
     y = categories.values()
 
