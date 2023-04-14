@@ -18,6 +18,7 @@ def load_rest_data(db):
     conn = sqlite3.connect(db)
     c = conn.cursor()
 
+    # joining tables
     c.execute("SELECT restaurants.name, categories.category, buildings.building, restaurants.rating "
               "FROM restaurants "
               "JOIN categories ON restaurants.category_id = categories.id "
@@ -43,6 +44,7 @@ def plot_rest_categories(db):
     conn = sqlite3.connect(db)
     c = conn.cursor()
 
+    # joining tables
     c.execute("SELECT category, COUNT(*) FROM restaurants "
               "JOIN categories ON restaurants.category_id = categories.id "
               "GROUP BY category")
